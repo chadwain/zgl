@@ -43,8 +43,8 @@ fn checkError() void {
             binding.INVALID_ENUM => "invalid enum",
             binding.INVALID_VALUE => "invalid value",
             binding.INVALID_OPERATION => "invalid operation",
-            binding.STACK_OVERFLOW => "stack overflow",
-            binding.STACK_UNDERFLOW => "stack underflow",
+            // binding.STACK_OVERFLOW => "stack overflow",
+            // binding.STACK_UNDERFLOW => "stack underflow",
             binding.OUT_OF_MEMORY => "out of memory",
             binding.INVALID_FRAMEBUFFER_OPERATION => "invalid framebuffer operation",
             // binding.INVALID_FRAMEBUFFER_OPERATION_EXT => Error.InvalidFramebufferOperation,
@@ -372,7 +372,7 @@ pub const Type = enum(types.Enum) {
     byte = binding.BYTE,
     short = binding.SHORT,
     int = binding.INT,
-    fixed = binding.FIXED,
+    // fixed = binding.FIXED,
     float = binding.FLOAT,
     half_float = binding.HALF_FLOAT,
     double = binding.DOUBLE,
@@ -524,15 +524,15 @@ pub const BufferTarget = enum(types.Enum) {
     /// Vertex attributes
     array_buffer = binding.ARRAY_BUFFER,
     /// Atomic counter storage
-    atomic_counter_buffer = binding.ATOMIC_COUNTER_BUFFER,
+    // atomic_counter_buffer = binding.ATOMIC_COUNTER_BUFFER,
     /// Buffer copy source
     copy_read_buffer = binding.COPY_READ_BUFFER,
     /// Buffer copy destination
     copy_write_buffer = binding.COPY_WRITE_BUFFER,
     /// Indirect compute dispatch commands
-    dispatch_indirect_buffer = binding.DISPATCH_INDIRECT_BUFFER,
+    // dispatch_indirect_buffer = binding.DISPATCH_INDIRECT_BUFFER,
     /// Indirect command arguments
-    draw_indirect_buffer = binding.DRAW_INDIRECT_BUFFER,
+    // draw_indirect_buffer = binding.DRAW_INDIRECT_BUFFER,
     /// Vertex array indices
     element_array_buffer = binding.ELEMENT_ARRAY_BUFFER,
     /// Pixel read target
@@ -540,9 +540,9 @@ pub const BufferTarget = enum(types.Enum) {
     /// Texture data source
     pixel_unpack_buffer = binding.PIXEL_UNPACK_BUFFER,
     /// Query result buffer
-    query_buffer = binding.QUERY_BUFFER,
+    // query_buffer = binding.QUERY_BUFFER,
     /// Read-write storage for shaders
-    shader_storage_buffer = binding.SHADER_STORAGE_BUFFER,
+    // shader_storage_buffer = binding.SHADER_STORAGE_BUFFER,
     /// Texture data buffer
     texture_buffer = binding.TEXTURE_BUFFER,
     /// Transform feedback buffer
@@ -820,10 +820,10 @@ pub fn copyBufferSubData(
 // Shaders
 
 pub const ShaderType = enum(types.Enum) {
-    compute = binding.COMPUTE_SHADER,
+    // compute = binding.COMPUTE_SHADER,
     vertex = binding.VERTEX_SHADER,
-    tess_control = binding.TESS_CONTROL_SHADER,
-    tess_evaluation = binding.TESS_EVALUATION_SHADER,
+    // tess_control = binding.TESS_CONTROL_SHADER,
+    // tess_evaluation = binding.TESS_EVALUATION_SHADER,
     geometry = binding.GEOMETRY_SHADER,
     fragment = binding.FRAGMENT_SHADER,
 };
@@ -1341,7 +1341,7 @@ pub const PrimitiveType = enum(types.Enum) {
     triangles = binding.TRIANGLES,
     triangle_strip_adjacency = binding.TRIANGLE_STRIP_ADJACENCY,
     triangles_adjacency = binding.TRIANGLES_ADJACENCY,
-    patches = binding.PATCHES,
+    // patches = binding.PATCHES,
 };
 
 pub fn drawArrays(primitiveType: PrimitiveType, first: usize, count: usize) void {
@@ -1410,8 +1410,8 @@ pub const Capabilities = enum(types.Enum) {
     // clip_distance = binding.CLIP_DISTANCE,
     color_logic_op = binding.COLOR_LOGIC_OP,
     cull_face = binding.CULL_FACE,
-    debug_output = binding.DEBUG_OUTPUT,
-    debug_output_synchronous = binding.DEBUG_OUTPUT_SYNCHRONOUS,
+    // debug_output = binding.DEBUG_OUTPUT,
+    // debug_output_synchronous = binding.DEBUG_OUTPUT_SYNCHRONOUS,
     depth_clamp = binding.DEPTH_CLAMP,
     depth_test = binding.DEPTH_TEST,
     dither = binding.DITHER,
@@ -1423,12 +1423,12 @@ pub const Capabilities = enum(types.Enum) {
     polygon_offset_point = binding.POLYGON_OFFSET_POINT,
     polygon_smooth = binding.POLYGON_SMOOTH,
     primitive_restart = binding.PRIMITIVE_RESTART,
-    primitive_restart_fixed_index = binding.PRIMITIVE_RESTART_FIXED_INDEX,
+    // primitive_restart_fixed_index = binding.PRIMITIVE_RESTART_FIXED_INDEX,
     rasterizer_discard = binding.RASTERIZER_DISCARD,
     sample_alpha_to_coverage = binding.SAMPLE_ALPHA_TO_COVERAGE,
     sample_alpha_to_one = binding.SAMPLE_ALPHA_TO_ONE,
     sample_coverage = binding.SAMPLE_COVERAGE,
-    sample_shading = binding.SAMPLE_SHADING,
+    // sample_shading = binding.SAMPLE_SHADING,
     sample_mask = binding.SAMPLE_MASK,
     scissor_test = binding.SCISSOR_TEST,
     stencil_test = binding.STENCIL_TEST,
@@ -1638,7 +1638,7 @@ pub const TextureTarget = enum(types.Enum) {
     @"2d_array" = binding.TEXTURE_2D_ARRAY,
     rectangle = binding.TEXTURE_RECTANGLE,
     cube_map = binding.TEXTURE_CUBE_MAP,
-    cube_map_array = binding.TEXTURE_CUBE_MAP_ARRAY,
+    // cube_map_array = binding.TEXTURE_CUBE_MAP_ARRAY,
     buffer = binding.TEXTURE_BUFFER,
     @"2d_multisample" = binding.TEXTURE_2D_MULTISAMPLE,
     @"2d_multisample_array" = binding.TEXTURE_2D_MULTISAMPLE_ARRAY,
@@ -1712,7 +1712,7 @@ pub const TextureUnit = enum(types.Enum) {
 };
 
 pub const TextureParameter = enum(types.Enum) {
-    depth_stencil_texture_mode = binding.DEPTH_STENCIL_TEXTURE_MODE,
+    // depth_stencil_texture_mode = binding.DEPTH_STENCIL_TEXTURE_MODE,
     base_level = binding.TEXTURE_BASE_LEVEL,
     compare_func = binding.TEXTURE_COMPARE_FUNC,
     compare_mode = binding.TEXTURE_COMPARE_MODE,
@@ -1740,7 +1740,7 @@ pub fn TextureParameterType(comptime param: TextureParameter) type {
             clamp_to_border = binding.CLAMP_TO_BORDER,
             mirrored_repeat = binding.MIRRORED_REPEAT,
             repeat = binding.REPEAT,
-            mirror_clamp_to_edge = binding.MIRROR_CLAMP_TO_EDGE,
+            // mirror_clamp_to_edge = binding.MIRROR_CLAMP_TO_EDGE,
         },
         .swizzle_r, .swizzle_g, .swizzle_b, .swizzle_a => enum(types.Int) {
             red = binding.RED,
@@ -1821,7 +1821,7 @@ pub const TextureInternalFormat = enum(types.Enum) {
     r3_g3_b2 = binding.R3_G3_B2,
     rgb4 = binding.RGB4,
     rgb5 = binding.RGB5,
-    rgb565 = binding.RGB565,
+    // rgb565 = binding.RGB565,
     rgb8 = binding.RGB8,
     rgb8_snorm = binding.RGB8_SNORM,
     rgb10 = binding.RGB10,
